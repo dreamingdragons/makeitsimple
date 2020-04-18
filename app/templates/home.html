@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="ui container segment">
+	<h1 class="ui centered header">.Net Tutorials</h1>
+</div>
+
+<div class="ui fluid container">
+	<div class="ui centered cards ">
+		{% for post in posts %}
+		<a class="ui card" href="/asp/list/{{ post.id }}/">
+		<div class="content">
+			<div class="header">{{ post.short_title }}</div>
+			{% if post.version == 2019 %}
+			<div class="ui violet right corner label"></div>
+			{% elif post.version == 2010 %}
+			<div class="ui green right corner label"></div>
+			{% endif %}
+			<div class="meta">{{ post.posted_on|timesince:current_date }} ago</div>
+			<div class="description">{{ post.description|truncatechars:100 }}</div>
+		</div>
+		<div class="extra content">
+			<i class="star icon"></i>
+			<span>12 views</span>
+			{% if post.posted_on >= a_week_ago %}
+			<div class="right floated item">
+				<div class="ui red tag label">New</div>
+			</div>
+			{% endif %}
+		</div>
+		</a>
+		{% endfor %}
+	</div>
+</div>
+
+
+
+{% endblock %}

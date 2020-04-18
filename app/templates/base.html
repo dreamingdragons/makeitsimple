@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<title>Make It Simple | Homepage</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+	<!-- <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}"> -->
+	<link rel="stylesheet" type="text/css" href="{% static 'semantic/semantic.min.css' %}">
+	<script type="text/javascript" src="{% static 'jquery/jquery-3.4.1.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'semantic/semantic.min.js' %}"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style type="text/css">
+	body {
+		overflow-x: hidden;
+		margin: 0;
+		background-image: url("{% static 'img/bg5.jpg' %}");
+		background-attachment: fixed;
+		background-size: 100% 110%;
+	}
+	p {
+		font-size: 115%;
+	}
+</style>
+<body>
+
+<div class="ui inverted stackable menu">
+	<div class="ui fluid container">
+		<a class="teal item" href="#">
+			<img class="ui avatar image" src="{% static 'img/makeitsimple.jpg' %}">
+			<span><b>Make It Simple</b></span>
+		</a>
+		<a class="item" href="/">
+			<i class="home icon"></i>
+			Home
+		</a>
+		<a class="item" href="/">
+			<i class="book icon"></i>
+			Tutorials
+		</a>
+		<a class="item" href="https://www.youtube.com/channel/UC7g6aQolm03WjL1x-080oWQ">
+			<i class="youtube icon"></i>
+			Channel
+		</a>
+		<div class="right item">
+            <div class="ui input"><input type="text" placeholder="Search..."></div>
+         </div>
+	</div>
+</div>
+
+{% block content %}
+
+{% endblock %}
+
+
+<!-- FOOTER -->
+<div class="ui inverted bottom vertical footer segment mt-3">
+	<div class="ui container">
+		<div class="ui stackable equal height equal width divided inverted grid">
+			<div class="column">
+				<h4 class="ui inverted header">About</h4>
+				<div class="ui inverted horizontal link list pt-2">
+					<a class="item" href="/">Home</a>
+					<a class="item" href="/">Tutorials</a>
+					<a class="item" href="https://www.youtube.com/channel/UC7g6aQolm03WjL1x-080oWQ">Channel</a>
+					<a class="item" href="#">About Us</a>
+				</div>
+			</div>
+			<div class="column">
+				<h4 class="ui inverted header">Social</h4>
+				<div class="ui inverted horizontal list">
+					<div class="item">
+						<a class="ui circular inverted red icon button" href="https://www.youtube.com/channel/UC7g6aQolm03WjL1x-080oWQ">
+  							<i class="youtube icon"></i>
+                		</a>
+					</div>
+					<div class="item">
+						<a class="ui circular inverted github icon button" href="#">
+  							<i class="github icon"></i>
+                		</a>
+					</div>
+					<div class="item">
+						<a class="ui circular inverted blue icon button" href="#">
+  							<i class="mail icon"></i>
+                		</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ui container">
+		<div class="ui divider"></div>	
+		<div class="ui inverted centered sub header">
+			<i class="copyright icon"></i>
+			2020 Make It Simple
+		</div>
+	</div>
+</div>
+<!-- END of Footer -->
+
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#menubar').click(function(){
+			$('#navbar').sidebar('toggle');
+		});
+	});
+</script>
+</html>

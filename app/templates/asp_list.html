@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="ui segment container">
+	<div class="ui header">
+		<!-- <i class="yellow star icon"></i> -->
+		<div class="content">
+			{{ post.title }}
+			<div class="sub header">
+				posted on -  {{ post.posted_on|date }}
+			</div>
+		</div>
+	</div>
+	<div class="ui divider"></div>
+	<!-- You Tube Video -->
+	<div class="ui text container">
+		<div class="ui 16:10 embed" data-source="youtube" data-id="{{ post.video_id }}" data-placeholder="{% static 'img/makeitsimple.jpg' %}" id="video"></div>
+		<div class="ui divider"></div>
+	</div>
+	<div class="ui container">
+		<h4>Description: </h4>
+		<p>{{ post.description }}</p>
+		<h4>Use Case:</h4>
+		<p>{{ post.use_case }}</p>
+		{% if post.source_code %}
+		<h4>Source Code:</h4>
+		<p> The complete source code is available at : <a href="{{ post.source_code }}"></a></p>
+		{% endif %}
+	</div>
+</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#video').embed();
+	});
+</script>
+{% endblock %}
