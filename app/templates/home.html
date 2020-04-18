@@ -8,6 +8,7 @@
 
 <div class="ui fluid container">
 	<div class="ui centered cards ">
+		{% if posts %}
 		{% for post in posts %}
 		<a class="ui card" href="/asp/list/{{ post.id }}/">
 		<div class="content">
@@ -31,6 +32,7 @@
 		</div>
 		</a>
 		{% endfor %}
+		{% endif %}
 	</div>
 </div>
 
