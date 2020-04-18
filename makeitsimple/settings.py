@@ -27,8 +27,7 @@ SECRET_KEY = security.SECRET_KEY
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '127.0.0.1', 'localhost', 'make-it-simple.herokuapp.com','www.make-it-simple.herokuapp.com',
-    'sparklers.cf','www.sparklers.cf',
+    '127.0.0.1', 'localhost', 'make-it-simple.herokuapp.com','www.make-it-simple.herokuapp.com','sparklers.cf','www.sparklers.cf',
 ]
 
 
